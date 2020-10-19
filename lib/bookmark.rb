@@ -1,12 +1,12 @@
 class BookmarkList
 
-  attr_reader :bookmarklist
+  attr_accessor :list
 
   def initialize
-    @bookmarklist = {google: "https://www.google.co.uk/", slack: "https://slack.com/intl/en-gb/"}
+    @list = {google: "https://www.google.co.uk/", slack: "https://slack.com/intl/en-gb/"}
   end
 
   def all
-    @bookmarklist
+    @list
   end
 end
