@@ -1,5 +1,9 @@
+require 'pg'
+
 class Bookmarks
   def self.all
-    {google: "https://www.google.co.uk/", slack: "https://slack.com/intl/en-gb/"}
+    connection = PG.connect :dbname => 'bookmark_manager'
+    result = connection.exec "SELECT * FROM bookmarks"
+    result.map {|row| row['url']}
   end
 end
