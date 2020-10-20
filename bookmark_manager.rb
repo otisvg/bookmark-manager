@@ -7,8 +7,8 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/bookmarks' do
-    @bookmark_list = Bookmarks.new.all
+    @bookmark_list = Bookmarks.all
     erb(:bookmarks)
   end
-  run! if app_file == $PROGRAM_NAME
+  run! if app_file == $0
 end
