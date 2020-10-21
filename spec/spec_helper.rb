@@ -15,7 +15,7 @@ require_relative "./setup_test_database.rb"
 Capybara.app = BookmarkManager
 
 RSpec.configure do |config|
-  config.before(:each) do 
+  config.before(:each) do
     setup_test_database
   end
   config.expect_with :rspec do |expectations|
