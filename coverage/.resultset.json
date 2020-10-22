@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/otis/Desktop/bookmark-manager/bookmark_manager.rb": {
+      "/Users/ben/Desktop/IT Portfolio/MAKERS/COURSE/Week04/otis-bookmark/bookmark_manager.rb": {
         "lines": [
           1,
           1,
@@ -29,25 +29,32 @@
           null
         ]
       },
-      "/Users/otis/Desktop/bookmark-manager/lib/bookmarks.rb": {
+      "/Users/ben/Desktop/IT Portfolio/MAKERS/COURSE/Week04/otis-bookmark/lib/bookmarks.rb": {
         "lines": [
           1,
           null,
           1,
+          1,
           null,
           1,
-          10,
-          10,
+          9,
+          9,
+          9,
+          null,
+          null,
+          1,
+          11,
+          11,
           null,
           0,
           null,
           null,
           null,
           1,
-          5,
-          5,
-          5,
-          8,
+          6,
+          6,
+          6,
+          9,
           null,
           null,
           null,
@@ -58,7 +65,7 @@
           null
         ]
       },
-      "/Users/otis/Desktop/bookmark-manager/spec/setup_test_database.rb": {
+      "/Users/ben/Desktop/IT Portfolio/MAKERS/COURSE/Week04/otis-bookmark/spec/setup_test_database.rb": {
         "lines": [
           1,
           null,
@@ -69,38 +76,9 @@
           null
         ]
       },
-      "/Users/otis/Desktop/bookmark-manager/spec/features/add_bookmark_spec.rb": {
+      "/Users/ben/Desktop/IT Portfolio/MAKERS/COURSE/Week04/otis-bookmark/spec/features/add_bookmark_spec.rb": {
         "lines": [
           null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/otis/Desktop/bookmark-manager/spec/features/home_spec.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          null,
-          null
-        ]
-      },
-      "/Users/otis/Desktop/bookmark-manager/spec/features/list_bookmarks_spec.rb": {
-        "lines": [
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
           1,
           1,
           1,
@@ -112,11 +90,47 @@
           null
         ]
       },
-      "/Users/otis/Desktop/bookmark-manager/spec/units/bookmarks_spec.rb": {
+      "/Users/ben/Desktop/IT Portfolio/MAKERS/COURSE/Week04/otis-bookmark/spec/features/home_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/ben/Desktop/IT Portfolio/MAKERS/COURSE/Week04/otis-bookmark/spec/features/list_bookmarks_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/ben/Desktop/IT Portfolio/MAKERS/COURSE/Week04/otis-bookmark/spec/units/bookmarks_spec.rb": {
         "lines": [
           1,
           null,
           1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
           1,
           1,
           1,
@@ -126,13 +140,15 @@
           1,
           null,
           1,
+          1,
+          3,
+          3,
+          null,
+          null,
+          null,
           null,
           1,
           1,
-          1,
-          null,
-          null,
-          null,
           1,
           1,
           1,
@@ -143,6 +159,6 @@
         ]
       }
     },
-    "timestamp": 1603375347
+    "timestamp": 1603377135
   }
 }

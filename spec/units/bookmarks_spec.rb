@@ -1,6 +1,12 @@
 require 'pg'
 
 describe Bookmarks do
+  array = [
+    {:title => 'makers', :url => 'http://www.makersacademy.com'},
+    {:title => 'google', :url => 'http://www.google.com'},
+    {:title => 'dos', :url => 'http://www.destroyallsoftware.com'}
+
+  ]
   describe '#all' do
     it 'displays a list bookmarks' do
       print 'setting up test database'
@@ -10,17 +16,19 @@ describe Bookmarks do
       connection.exec("INSERT INTO bookmarks (url, title) VALUES ('http://www.destroyallsoftware.com', 'dos');")
 
       bookmarks = Bookmarks.all
-
-      expect(bookmarks).to include({:title => 'makers', :url => 'http://www.makersacademy.com'})
-      expect(bookmarks).to include({:title => 'google', :url => 'http://www.google.com'})
-      expect(bookmarks).to include({:title => 'dos', :url => 'http://www.destroyallsoftware.com'})
+      3.times do |each|
+        expect(bookmarks[each].title).to eq (array[each][:title])
+        expect(bookmarks[each].url).to eq(array[each][:url])
+      end
     end
   end
 
   describe '#create' do
     it 'creates a new bookmark' do
+      test_array = {:title => 'testbookmark', :url => 'http://www.testbookmark.com'}
       Bookmarks.create(url: 'http://www.testbookmark.com', title: 'testbookmark')
-      expect(Bookmarks.all).to include({:title => 'testbookmark', :url => 'http://www.testbookmark.com'})
+      expect(Bookmarks.all.last.title).to include(test_array[:title])
+      expect(Bookmarks.all.last.url).to include(test_array[:url])
     end
   end
 end

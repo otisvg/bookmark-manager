@@ -9,8 +9,8 @@ feature 'viewing a list of bookmarks' do
     Bookmarks.create(url: "http://www.google.com", title: 'google' )
     Bookmarks.create(url: "http://www.destroyallsoftware.com", title: 'dos')
     visit('/bookmarks')
-    expect(page).to have_content("http://www.makersacademy.com")
-    expect(page).to have_content("http://www.google.com")
-    expect(page).to have_content("http://www.destroyallsoftware.com")
+    expect(page).to have_link("makers", href: 'http://www.makersacademy.com')
+    expect(page).to have_link("google", href: 'http://www.google.com')
+    expect(page).to have_link("dos", href: 'http://www.destroyallsoftware.com')
   end
 end

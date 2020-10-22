@@ -1,6 +1,13 @@
 require 'pg'
 
 class Bookmarks
+  attr_reader :id, :url, :title
+
+  def initialize(id:, title:, url:)
+    @id = id
+    @title = title
+    @url = url
+  end
 
   def self.initiate
     if ENV['ENVIRONMENT'] == 'test'
@@ -14,7 +21,7 @@ class Bookmarks
     initiate
     result = @@connection.exec "SELECT * FROM bookmarks"
     result.map { |row|
-      {:title => row['title'], :url => row['url']}
+      Bookmarks.new( :id => row['id'], :title => row['title'], :url => row['url'])
     }
   end
 
