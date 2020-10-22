@@ -1,6 +1,10 @@
 <h1>BookmarksList</h1>
-<ul>
+<ul class="bookmark">
   <% @bookmark_list.each do |bookmark| %>
-    <li><a href="<%=bookmark.url %>"><%= bookmark.title %></a></li>
+  <li><a href="<%=bookmark.url %>"><%= bookmark.title %></a></li>
   <% end %>
 </ul>
+
+<form action="/bookmarks/edit">
+  <input type="submit" value="Edit">
+</form>

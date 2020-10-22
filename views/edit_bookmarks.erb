@@ -1,0 +1,14 @@
+<h1>Edit BookmarksList</h1>
+<form action="/bookmarks/delete" method="post">
+  <ul class="bookmark">
+    <% @bookmark_list.each do |bookmark| %>
+    <li>
+      <input type="checkbox" value="<%= bookmark.title %>" name="check[]">
+      <a href="<%=bookmark.url %>"><%= bookmark.title %></a>
+    </li>
+    <% end %>
+
+  </ul>
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete">
+</form>
