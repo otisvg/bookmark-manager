@@ -19,7 +19,7 @@ class Bookmarks
 
   def self.all
     initiate
-    result = @@connection.exec "SELECT * FROM bookmarks"
+    result = @@connection.exec "SELECT * FROM bookmarks;"
     result.map { |row|
       Bookmarks.new( :id => row['id'], :title => row['title'], :url => row['url'])
     }
@@ -27,16 +27,18 @@ class Bookmarks
 
   def self.create(url:, title:)
     initiate
-    result = @@connection.exec("INSERT INTO bookmarks (url, title) VALUES('#{url}', '#{title}') RETURNING id, title, url")
+    result = @@connection.exec("INSERT INTO bookmarks (url, title) VALUES('#{url}', '#{title}') RETURNING id, title, url;")
     Bookmarks.new( :id => result[0]['id'], :title => result[0]['title'], :url => result[0]['url'])
   end
 
-  def self.delete(title:)
+  def self.delete(id:)
     if ENV['ENVIRONMENT'] == 'test'
       @@connection = PG.connect :dbname => 'bookmark_manager_test'
     else
       @@connection = PG.connect :dbname => 'bookmark_manager'
     end
-    @@connection.exec("DELETE FROM bookmarks WHERE title=#{:title};")
+    id.each do |id|
+      @@connection.exec("DELETE FROM bookmarks WHERE id='#{id}';")
+    end
   end
 end
