@@ -5,10 +5,9 @@ feature 'viewing a list of bookmarks' do
   end
 
   scenario 'shows list of bookmarks on page' do
-
-    Bookmarks.create(url: "http://www.makersacademy.com")
-    Bookmarks.create(url: "http://www.google.com")
-    Bookmarks.create(url: "http://www.destroyallsoftware.com")
+    Bookmarks.create(url: "http://www.makersacademy.com", title: 'makers')
+    Bookmarks.create(url: "http://www.google.com", title: 'google' )
+    Bookmarks.create(url: "http://www.destroyallsoftware.com", title: 'dos')
     visit('/bookmarks')
     expect(page).to have_content("http://www.makersacademy.com")
     expect(page).to have_content("http://www.google.com")
