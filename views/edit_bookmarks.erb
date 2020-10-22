@@ -3,7 +3,7 @@
   <ul class="bookmark">
     <% @bookmark_list.each do |bookmark| %>
     <li>
-      <input type="checkbox" value="<%= bookmark.title %>" name="check[]">
+      <input type="checkbox" id="<%= bookmark.title %>" value="<%= bookmark.title %>" name="check[]">
       <a href="<%=bookmark.url %>"><%= bookmark.title %></a>
     </li>
     <% end %>

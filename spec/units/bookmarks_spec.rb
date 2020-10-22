@@ -10,10 +10,8 @@ describe Bookmarks do
   describe '#all' do
     it 'displays a list bookmarks' do
       print 'setting up test database'
-      connection = PG.connect(dbname: 'bookmark_manager_test')
-      connection.exec("INSERT INTO bookmarks (url, title) VALUES ('http://www.makersacademy.com', 'makers');")
-      connection.exec("INSERT INTO bookmarks (url, title) VALUES ('http://www.google.com', 'google');")
-      connection.exec("INSERT INTO bookmarks (url, title) VALUES ('http://www.destroyallsoftware.com', 'dos');")
+      setup_test_database
+      add_platform_records
 
       bookmarks = Bookmarks.all
       3.times do |each|
@@ -31,4 +29,15 @@ describe Bookmarks do
       expect(Bookmarks.all.last.url).to include(test_array[:url])
     end
   end
+
+  describe '#delete' do
+  it 'deletes the given bookmark' do
+    setup_test_database
+    bookmark = Bookmarks.create(title: 'Makers', url: 'http://www.makersacademy.com')
+
+    Bookmarks.delete(title: bookmark.title)
+
+    expect(Bookmarks.all.length).to eq 0
+  end
+end
 end
