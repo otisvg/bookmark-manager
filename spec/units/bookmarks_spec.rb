@@ -2,9 +2,9 @@ require 'pg'
 
 describe Bookmarks do
   array = [
-    { title: 'makers', url: 'http://www.makersacademy.com' },
-    { title: 'google', url: 'http://www.google.com' },
-    { title: 'dos', url: 'http://www.destroyallsoftware.com' }
+    {:title => 'makers', :url => 'http://www.makersacademy.com'},
+    {:title => 'google', :url => 'http://www.google.com'},
+    {:title => 'dos', :url => 'http://www.destroyallsoftware.com'}
 
   ]
   describe '#all' do
@@ -23,20 +23,20 @@ describe Bookmarks do
 
   describe '#create' do
     it 'creates a new bookmark' do
-      test_array = { title: 'testbookmark', url: 'http://www.testbookmark.com' }
+      test_array = {:title => 'testbookmark', :url => 'http://www.testbookmark.com'}
       Bookmarks.create(url: 'http://www.testbookmark.com', title: 'testbookmark')
       expect(Bookmarks.all.last.title).to include(test_array[:title])
       expect(Bookmarks.all.last.url).to include(test_array[:url])
     end
   end
 
+
+
+
   describe '#delete' do
     it 'deletes the given bookmark' do
-      setup_test_database
       bookmark = Bookmarks.create(title: 'Makers', url: 'http://www.makersacademy.com')
-
-      Bookmarks.delete(title: bookmark.title)
-
+      Bookmarks.delete(id: [bookmark.id])
       expect(Bookmarks.all.length).to eq 0
     end
   end
